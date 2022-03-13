@@ -28,6 +28,8 @@ class DetailInformationFragment : Fragment(R.layout.fragment_detail_information)
         requireActivity().findViewById<TextView>(R.id.toolBarTitle).text = vacancy.profession
 
         binding.apply {
+            professionTv.text = vacancy.profession
+            companyTv.text = vacancy.company
             industryTv.text = vacancy.industry
             conditionsTv.text = vacancy.conditions
             descriptionTv.text = vacancy.description
