@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="..\:/Users/Aspan/AndroidProjects/Vacancy/app/src/main/res/drawable/arrow_back.xml" value="0.3005" />
+        <entry key="..\:/Users/Aspan/AndroidProjects/Vacancy/app/src/main/res/drawable/circle.xml" value="0.2225" />
+        <entry key="..\:/Users/Aspan/AndroidProjects/Vacancy/app/src/main/res/drawable/ic_baseline_arrow_back_ios_24.xml" value="0.2225" />
+        <entry key="..\:/Users/Aspan/AndroidProjects/Vacancy/app/src/main/res/drawable/ic_launcher_background.xml" value="0.3005" />
+        <entry key="..\:/Users/Aspan/AndroidProjects/Vacancy/app/src/main/res/drawable/pie_chart.xml" value="0.2225" />
+        <entry key="..\:/Users/Aspan/AndroidProjects/Vacancy/app/src/main/res/drawable/progress_circle.xml" value="0.3415" />
+        <entry key="..\:/Users/Aspan/AndroidProjects/Vacancy/app/src/main/res/drawable/rectangle.xml" value="0.2095" />
+        <entry key="..\:/Users/Aspan/AndroidProjects/Vacancy/app/src/main/res/drawable/rectangle_with_corner.xml" value="0.3005" />
+        <entry key="..\:/Users/Aspan/AndroidProjects/Vacancy/app/src/main/res/drawable/test.xml" value="0.2225" />
+        <entry key="..\:/Users/Aspan/AndroidProjects/Vacancy/app/src/main/res/layout-v28/fragment_vacancy.xml" value="0.3875" />
+        <entry key="..\:/Users/Aspan/AndroidProjects/Vacancy/app/src/main/res/layout/activity_main.xml" value="0.22" />
+        <entry key="..\:/Users/Aspan/AndroidProjects/Vacancy/app/src/main/res/layout/fragment_detail.xml" value="0.2" />
+        <entry key="..\:/Users/Aspan/AndroidProjects/Vacancy/app/src/main/res/layout/fragment_detail_information.xml" value="0.33" />
+        <entry key="..\:/Users/Aspan/AndroidProjects/Vacancy/app/src/main/res/layout/fragment_employer.xml" value="0.3875" />
+        <entry key="..\:/Users/Aspan/AndroidProjects/Vacancy/app/src/main/res/layout/fragment_home.xml" value="0.20208333333333334" />
+        <entry key="..\:/Users/Aspan/AndroidProjects/Vacancy/app/src/main/res/layout/fragment_skill.xml" value="0.3875" />
+        <entry key="..\:/Users/Aspan/AndroidProjects/Vacancy/app/src/main/res/layout/fragment_top_info.xml" value="0.2453125" />
+        <entry key="..\:/Users/Aspan/AndroidProjects/Vacancy/app/src/main/res/layout/fragment_vacancies.xml" value="0.20208333333333334" />
+        <entry key="..\:/Users/Aspan/AndroidProjects/Vacancy/app/src/main/res/layout/fragment_vacancy.xml" value="0.25" />
+        <entry key="..\:/Users/Aspan/AndroidProjects/Vacancy/app/src/main/res/layout/item_top5.xml" value="0.67" />
+        <entry key="..\:/Users/Aspan/AndroidProjects/Vacancy/app/src/main/res/layout/item_vacancy_detail.xml" value="0.5" />
+        <entry key="..\:/Users/Aspan/AndroidProjects/Vacancy/app/src/main/res/layout/item_vacancy_info.xml" value="0.3875" />
+        <entry key="..\:/Users/Aspan/AndroidProjects/Vacancy/app/src/main/res/layout/item_vacancy_list.xml" value="0.25" />
+        <entry key="..\:/Users/Aspan/AndroidProjects/Vacancy/app/src/main/res/layout/pie_chart.xml" value="0.3875" />
+        <entry key="..\:/Users/Aspan/AndroidProjects/Vacancy/app/src/main/res/layout/single_chip.xml" value="0.3875" />
+        <entry key="..\:/Users/Aspan/AndroidProjects/Vacancy/app/src/main/res/layout/test.xml" value="0.3875" />
+        <entry key="..\:/Users/Aspan/AndroidProjects/Vacancy/app/src/main/res/layout/tool_bar.xml" value="0.2453125" />
+        <entry key="..\:/Users/Aspan/AndroidProjects/Vacancy/app/src/main/res/layout/vacancy_list_item.xml" value="0.3875" />
+        <entry key="..\:/Users/Aspan/AndroidProjects/Vacancy/app/src/main/res/layout/view_pager_item.xml" value="0.3875" />
+      </map>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="1.8" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/build/classes" />
+  </component>
+  <component name="ProjectType">
+    <option name="id" value="Android" />
+  </component>
+</project>

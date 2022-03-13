@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/parent"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="14dp"
+        android:layout_marginTop="14dp"
+        android:layout_marginEnd="14dp"
+        android:background="@drawable/rectangle_with_corner"
+        android:padding="12dp">
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/professionTabTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Профессии"
+            android:textColor="@color/cadet_grey"
+            android:textSize="13sp"
+            app:layout_constraintEnd_toStartOf="@+id/guideline1"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <View
+            android:id="@+id/professionIndicator"
+            style="@style/indicator_horizontal"
+            android:layout_marginStart="3dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginEnd="3dp"
+            android:backgroundTint="@color/cadet_grey"
+            app:layout_constraintEnd_toStartOf="@+id/guideline1"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/professionTabTitle" />
+
+        <View
+            android:id="@+id/skillIndicator"
+            style="@style/indicator_horizontal"
+            android:layout_marginStart="3dp"
+            android:layout_marginEnd="3dp"
+            android:backgroundTint="@color/cadet_grey"
+            app:layout_constraintEnd_toStartOf="@+id/guideline2"
+            app:layout_constraintStart_toStartOf="@+id/guideline1"
+            app:layout_constraintTop_toTopOf="@+id/professionIndicator" />
+
+        <View
+            android:id="@+id/employerIndicator"
+            style="@style/indicator_horizontal"
+            android:layout_marginStart="3dp"
+            android:layout_marginEnd="3dp"
+            android:backgroundTint="@color/cadet_grey"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/guideline2"
+            app:layout_constraintTop_toTopOf="@+id/skillIndicator" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/skillTabTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Навыки"
+            android:textColor="@color/cadet_grey"
+            android:textSize="13sp"
+            app:layout_constraintEnd_toStartOf="@+id/guideline2"
+            app:layout_constraintStart_toStartOf="@+id/guideline1"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/employerTabTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Работодатели"
+            android:textColor="@color/cadet_grey"
+            android:textSize="13sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/guideline2"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <com.github.mikephil.charting.charts.PieChart
+            android:id="@+id/pieChart"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:layout_gravity="center_vertical"
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="10dp"
+            app:layout_constraintBottom_toTopOf="@+id/viewDivider"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/professionIndicator" />
+
+        <LinearLayout
+            android:id="@+id/legend"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="10dp"
+            android:gravity="center_vertical"
+            android:orientation="vertical"
+            app:layout_constraintBottom_toTopOf="@+id/viewDivider"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/pieChart"
+            app:layout_constraintTop_toBottomOf="@+id/employerIndicator" />
+
+        <View
+            android:id="@+id/viewDivider"
+            style="@style/divider_horizontal"
+            android:layout_marginBottom="8dp"
+            app:layout_constraintBottom_toTopOf="@+id/topInfoTv"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <View
+            android:id="@+id/viewDivider1"
+            style="@style/divider_vertical"
+            android:layout_marginEnd="16dp"
+            app:layout_constraintBottom_toBottomOf="@+id/detailButton"
+            app:layout_constraintEnd_toStartOf="@+id/detailButton"
+            app:layout_constraintTop_toTopOf="@+id/detailButton" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/topInfoTv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="3dp"
+            android:textColor="@color/cadet_grey"
+            android:textSize="14sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            tools:text="Топ професии" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/detailButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Подробнее"
+            android:textColor="@color/congress_lue"
+            android:textSize="14sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/topInfoTv" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.33333333" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.666666" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</LinearLayout>

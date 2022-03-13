@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/homeFragment">
+
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="kz.aspan.vacancy.presentation.viewpager.ViewPagerFragment"
+        android:label="fragment_home"
+        tools:layout="@layout/fragment_home" >
+        <action
+            android:id="@+id/action_homeFragment_to_detailFragment"
+            app:destination="@id/detailFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_vacanciesFragment"
+            app:destination="@id/vacanciesFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/detailFragment"
+        android:name="kz.aspan.vacancy.presentation.TopInfoFragment"
+        android:label="fragment_detail"
+        tools:layout="@layout/fragment_top_info" >
+        <argument
+            android:name="vacancy_list"
+            app:argType="kz.aspan.vacancy.domain.model.Simple" />
+        <action
+            android:id="@+id/action_detailFragment_to_vacanciesFragment"
+            app:destination="@id/vacanciesFragment" />
+        <argument
+            android:name="query"
+            app:argType="integer" />
+    </fragment>
+    <fragment
+        android:id="@+id/vacanciesFragment"
+        android:name="kz.aspan.vacancy.presentation.vacancies.VacanciesFragment"
+        android:label="fragment_vacancies"
+        tools:layout="@layout/fragment_vacancies" >
+        <argument
+            android:name="vacancy_id"
+            app:argType="string" />
+        <argument
+            android:name="query"
+            app:argType="integer" />
+        <action
+            android:id="@+id/action_vacanciesFragment_to_detailInformationFragment"
+            app:destination="@id/detailInformationFragment" />
+        <action
+            android:id="@+id/action_vacanciesFragment_to_detailInformationFragment2"
+            app:destination="@id/detailInformationFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/detailInformationFragment"
+        android:name="kz.aspan.vacancy.presentation.DetailInformationFragment"
+        android:label="fragment_detail_information"
+        tools:layout="@layout/fragment_detail_information" >
+        <argument
+            android:name="vacancy"
+            app:argType="kz.aspan.vacancy.domain.model.Data" />
+    </fragment>
+</navigation>

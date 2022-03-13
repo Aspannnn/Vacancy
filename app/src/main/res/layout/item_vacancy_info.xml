@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/rectangle_with_corner"
+    android:orientation="vertical"
+    android:padding="12dp">
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/titleTv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/black"
+        android:textSize="18sp"
+        tools:text="IT-Аудитор" />
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/subTitleTv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="6dp"
+        android:textColor="@color/cadet_grey"
+        android:textSize="15sp"
+        android:visibility="gone"
+        tools:text="IT-Аудитор" />
+
+    <View
+        style="@style/divider_horizontal"
+        android:layout_width="match_parent"
+        android:layout_marginTop="12dp" />
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/descriptionTv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:textColor="@color/black"
+        android:textSize="12sp"
+        tools:text="Системное мышление (умение определять сложные системы и работать с ними. В том числе системная инженерия)" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/vacancyButton"
+        style="@style/outlineButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="end"
+        android:layout_marginTop="10dp"
+        android:drawableEnd="@drawable/ic_next"
+        android:textColor="@color/congress_lue"
+        android:textSize="15sp"
+        tools:text="48 вакансии" />
+
+
+</LinearLayout>
