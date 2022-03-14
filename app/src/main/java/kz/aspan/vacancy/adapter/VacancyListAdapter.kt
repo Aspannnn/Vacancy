@@ -31,7 +31,11 @@ class VacancyListAdapter @Inject constructor() :
             titleTv.text = data.title
             vacancyCount.text =
                 holder.itemView.context.getString(R.string.count_vacancies, data.numberOfVacancies)
-
+            root.setOnClickListener {
+                onVacancyClickListener?.let { click ->
+                    click(data)
+                }
+            }
         }
     }
 
@@ -50,9 +54,9 @@ class VacancyListAdapter @Inject constructor() :
     }
 
 
-    private var onSimpleDataClickListener: ((Data) -> Unit)? = null
+    private var onVacancyClickListener: ((SimpleData) -> Unit)? = null
 
-    fun setOnSimpleDataClickListener(listener: (Data) -> Unit) {
-        onSimpleDataClickListener = listener
+    fun setOnVacancyClickListener(listener: (SimpleData) -> Unit) {
+        onVacancyClickListener = listener
     }
 }

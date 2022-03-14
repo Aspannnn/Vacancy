@@ -55,7 +55,7 @@ class SkillFragment : Fragment(R.layout.fragment_skill) {
                 R.id.action_homeFragment_to_detailFragment,
                 Bundle().apply {
                     putSerializable("vacancy_list", simple)
-                    putInt("query",SKILL)
+                    putInt("query", SKILL)
                 }
             )
         }
@@ -109,7 +109,7 @@ class SkillFragment : Fragment(R.layout.fragment_skill) {
             simple = it
             createItemProfession(top5)
 
-            setUpPieChart()
+            setUpPieChart(top5.size)
             loadChartData(top5)
             fillLegend()
         }
@@ -147,14 +147,14 @@ class SkillFragment : Fragment(R.layout.fragment_skill) {
         return drawable
     }
 
-    private fun setUpPieChart() {
+    private fun setUpPieChart(center: Int) {
         binding.skillPage.pieChart.apply {
             setDrawEntryLabels(false)
             setDrawMarkers(false)
             isDrawHoleEnabled = true
             holeRadius = 68f
             transparentCircleRadius = 75f
-            centerText = "TOP 5"
+            centerText = getString(R.string.top_pie_chart, center)
             setCenterTextSize(15f)
             description.isEnabled = false
         }

@@ -9,6 +9,7 @@ import android.widget.LinearLayout
 import android.widget.TextView
 import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
+import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
 import com.github.mikephil.charting.animation.Easing
 import com.github.mikephil.charting.data.PieData
@@ -24,6 +25,7 @@ import kz.aspan.vacancy.common.Constants.EMPLOYER
 import kz.aspan.vacancy.common.Constants.PROFESSION
 import kz.aspan.vacancy.common.Constants.SKILL
 import kz.aspan.vacancy.common.MarginItemDecoration
+import kz.aspan.vacancy.common.navigateSafely
 import kz.aspan.vacancy.common.px
 import kz.aspan.vacancy.common.setCustomLegendRenderer
 import kz.aspan.vacancy.databinding.FragmentTopInfoBinding
@@ -47,9 +49,7 @@ class TopInfoFragment : Fragment(R.layout.fragment_top_info) {
         super.onViewCreated(view, savedInstanceState)
         _binding = FragmentTopInfoBinding.bind(view)
 
-
         val simple = args.vacancyList
-
 
         val count = if (simple.count >= 5) 5 else simple.count
 
@@ -66,9 +66,18 @@ class TopInfoFragment : Fragment(R.layout.fragment_top_info) {
         binding.rv.adapter = adapterVacancy
         binding.rv.addItemDecoration(MarginItemDecoration(10.px))
 
+        adapterVacancy.setOnVacancyClickListener {
+            findNavController().navigateSafely(R.id.action_detailFragment_to_vacanciesFragment,
+                Bundle().apply {
+                    putString("vacancy_id", it.id)
+                    putInt("query", args.query)
+                })
+
+        }
 
 
-        setUpPieChart()
+
+        setUpPieChart(count)
         loadChartData(simple.data.take(5))
         fillLegend()
     }
@@ -111,14 +120,14 @@ class TopInfoFragment : Fragment(R.layout.fragment_top_info) {
         return drawable
     }
 
-    private fun setUpPieChart() {
+    private fun setUpPieChart(center: Int) {
         binding.pieChart.apply {
             setDrawEntryLabels(false)
             setDrawMarkers(false)
             isDrawHoleEnabled = true
             holeRadius = 68f
             transparentCircleRadius = 75f
-            centerText = "TOP 5"
+            centerText = getString(R.string.top_pie_chart, center)
             setCenterTextSize(15f)
             description.isEnabled = false
         }

@@ -111,7 +111,7 @@ class ProfessionFragment : Fragment(R.layout.fragment_profession) {
 
             simple = it
 
-            setUpPieChart()
+            setUpPieChart(top5.size)
             loadChartData(top5)
             fillLegend()
         }
@@ -149,14 +149,14 @@ class ProfessionFragment : Fragment(R.layout.fragment_profession) {
         return drawable
     }
 
-    private fun setUpPieChart() {
+    private fun setUpPieChart(center:Int) {
         binding.professionPage.pieChart.apply {
             setDrawEntryLabels(false)
             setDrawMarkers(false)
             isDrawHoleEnabled = true
             holeRadius = 68f
             transparentCircleRadius = 75f
-            centerText = "TOP 5"
+            centerText = getString(R.string.top_pie_chart, center)
             setCenterTextSize(15f)
             description.isEnabled = false
         }
