@@ -58,5 +58,13 @@
         <argument
             android:name="vacancy"
             app:argType="kz.aspan.vacancy.domain.model.Data" />
+        <action
+            android:id="@+id/action_detailInformationFragment_to_responseToAVacancyFragment"
+            app:destination="@id/responseToAVacancyFragment" />
     </fragment>
+    <fragment
+        android:id="@+id/responseToAVacancyFragment"
+        android:name="kz.aspan.vacancy.presentation.response.ResponseToAVacancyFragment"
+        android:label="fragment_respons_to_a_vacancy"
+        tools:layout="@layout/fragment_respons_to_a_vacancy" />
 </navigation>

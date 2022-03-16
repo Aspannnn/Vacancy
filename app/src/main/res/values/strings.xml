@@ -19,4 +19,11 @@
     <string name="contacts">Контакты:</string>
     <string name="city">Город:</string>
     <string name="address">Адрес:</string>
+    <string name="email">Почта</string>
+    <string name="edit">Редактировать</string>
+    <string name="hide_information">Скрыть информацию</string>
+    <string name="user_avatar">user avatar</string>
+    <string name="generate_a_resume">Сформировать резюме</string>
+    <string name="view_cv">Просмотреть</string>
+    <string name="send">Отправить</string>
 </resources>

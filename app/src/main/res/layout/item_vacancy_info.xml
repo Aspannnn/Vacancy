@@ -40,7 +40,7 @@
         tools:text="Системное мышление (умение определять сложные системы и работать с ними. В том числе системная инженерия)" />
 
     <com.google.android.material.button.MaterialButton
-        android:id="@+id/vacancyButton"
+        android:id="@+id/responseButton"
         style="@style/outlineButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"

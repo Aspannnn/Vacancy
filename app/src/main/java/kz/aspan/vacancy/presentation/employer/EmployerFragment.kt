@@ -72,19 +72,19 @@ class EmployerFragment : Fragment(R.layout.fragment_employer) {
 
     private fun navigate(viewPager: ViewPager2) {
         binding.employerPage.skillTabTitle.setOnClickListener {
-            viewPager?.currentItem = 1
+            viewPager.currentItem = 1
         }
 
         binding.employerPage.skillIndicator.setOnClickListener {
-            viewPager?.currentItem = 1
+            viewPager.currentItem = 1
         }
 
         binding.employerPage.professionIndicator.setOnClickListener {
-            viewPager?.currentItem = 0
+            viewPager.currentItem = 0
         }
 
         binding.employerPage.professionTabTitle.setOnClickListener {
-            viewPager?.currentItem = 0
+            viewPager.currentItem = 0
         }
     }
 
@@ -217,7 +217,7 @@ class EmployerFragment : Fragment(R.layout.fragment_employer) {
 
             val title = view.findViewById<TextView>(R.id.titleTv)
             val subTitle = view.findViewById<TextView>(R.id.subTitleTv)
-            val button = view.findViewById<Button>(R.id.vacancyButton)
+            val button = view.findViewById<Button>(R.id.responseButton)
             val description = view.findViewById<TextView>(R.id.descriptionTv)
 
             title.text = professions[i].title

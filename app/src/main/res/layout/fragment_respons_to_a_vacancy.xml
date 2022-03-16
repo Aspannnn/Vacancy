@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    tools:context=".presentation.response.ResponseToAVacancyFragment">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <include
+            android:id="@+id/emailEditor"
+            layout="@layout/item_resume_editor_tv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="25dp" />
+
+        <View
+            style="@style/divider_horizontal"
+            android:layout_width="match_parent"
+            android:layout_marginTop="12dp" />
+
+        <include
+            android:id="@+id/phoneNumberEditor"
+            layout="@layout/item_resume_editor_tv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp" />
+
+        <View
+            style="@style/divider_horizontal"
+            android:layout_width="match_parent"
+            android:layout_marginTop="12dp" />
+
+        <include
+            android:id="@+id/avatarEditor"
+            layout="@layout/item_resume_editor_iv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp" />
+
+        <View
+            style="@style/divider_horizontal"
+            android:layout_width="match_parent"
+            android:layout_marginTop="12dp" />
+
+        <include
+            android:id="@+id/gpaEditor"
+            layout="@layout/item_resume_editor_tv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp" />
+
+        <View
+            style="@style/divider_horizontal"
+            android:layout_width="match_parent"
+            android:layout_marginTop="12dp" />
+
+        <include
+            android:id="@+id/skillEditor"
+            layout="@layout/item_resume_editor_et"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp" />
+
+        <View
+            style="@style/divider_horizontal"
+            android:layout_width="match_parent"
+            android:layout_marginTop="12dp" />
+
+        <include
+            android:id="@+id/achievementsEditor"
+            layout="@layout/item_resume_editor_et"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp" />
+
+        <View
+            style="@style/divider_horizontal"
+            android:layout_width="match_parent"
+            android:layout_marginTop="12dp" />
+
+        <include
+            android:id="@+id/experienceEditor"
+            layout="@layout/item_resume_editor_et"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp" />
+
+        <Button
+            android:id="@+id/generateCVButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="14dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="14dp"
+            android:text="@string/generate_a_resume" />
+
+        <LinearLayout
+            android:id="@+id/cvButtons"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            android:orientation="horizontal"
+            android:paddingStart="14dp"
+            android:paddingEnd="14dp"
+            android:visibility="gone">
+
+            <Button
+                android:id="@+id/viewCV"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:layout_marginEnd="10dp"
+                android:layout_weight="1"
+                android:paddingStart="14dp"
+                android:paddingEnd="14dp"
+                android:text="@string/view_cv" />
+
+            <Button
+                android:id="@+id/sendButton"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="20dp"
+                android:layout_weight="1"
+                android:paddingStart="14dp"
+                android:paddingEnd="14dp"
+                android:text="@string/send" />
+        </LinearLayout>
+    </LinearLayout>
+
+</ScrollView>

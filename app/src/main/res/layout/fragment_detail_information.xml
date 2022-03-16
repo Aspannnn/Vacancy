@@ -115,7 +115,7 @@
         app:layout_constraintTop_toBottomOf="@+id/descriptionTv" />
 
     <com.google.android.material.button.MaterialButton
-        android:id="@+id/vacancyButton"
+        android:id="@+id/responseButton"
         style="@style/outlineButton"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
@@ -150,7 +150,7 @@
         android:padding="14dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/vacancyButton">
+        app:layout_constraintTop_toBottomOf="@+id/responseButton">
 
         <com.google.android.material.textview.MaterialTextView
             android:id="@+id/materialTextView4"

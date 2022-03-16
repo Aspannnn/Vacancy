@@ -122,7 +122,7 @@
         tools:layout_editor_absoluteX="12dp" />
 
     <com.google.android.material.button.MaterialButton
-        android:id="@+id/vacancyButton"
+        android:id="@+id/responseButton"
         style="@style/outlineButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"

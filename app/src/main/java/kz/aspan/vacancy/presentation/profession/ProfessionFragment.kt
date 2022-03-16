@@ -27,7 +27,6 @@ import kz.aspan.vacancy.R
 import kz.aspan.vacancy.common.Constants.PROFESSION
 import kz.aspan.vacancy.common.navigateSafely
 import kz.aspan.vacancy.common.px
-import kz.aspan.vacancy.common.setCustomLegendRenderer
 import kz.aspan.vacancy.databinding.FragmentProfessionBinding
 import kz.aspan.vacancy.domain.model.Simple
 import kz.aspan.vacancy.domain.model.SimpleData
@@ -72,19 +71,19 @@ class ProfessionFragment : Fragment(R.layout.fragment_profession) {
 
     private fun navigate(viewPager: ViewPager2) {
         binding.professionPage.skillTabTitle.setOnClickListener {
-            viewPager?.currentItem = 1
+            viewPager.currentItem = 1
         }
 
         binding.professionPage.skillIndicator.setOnClickListener {
-            viewPager?.currentItem = 1
+            viewPager.currentItem = 1
         }
 
         binding.professionPage.employerTabTitle.setOnClickListener {
-            viewPager?.currentItem = 2
+            viewPager.currentItem = 2
         }
 
         binding.professionPage.employerIndicator.setOnClickListener {
-            viewPager?.currentItem = 2
+            viewPager.currentItem = 2
         }
     }
 
@@ -218,7 +217,7 @@ class ProfessionFragment : Fragment(R.layout.fragment_profession) {
 
             val title = view.findViewById<TextView>(R.id.titleTv)
             val subTitle = view.findViewById<TextView>(R.id.subTitleTv)
-            val button = view.findViewById<Button>(R.id.vacancyButton)
+            val button = view.findViewById<Button>(R.id.responseButton)
             val description = view.findViewById<TextView>(R.id.descriptionTv)
 
             title.text = professions[i].title

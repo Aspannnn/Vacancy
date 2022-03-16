@@ -35,7 +35,7 @@ class JobListAdapter @Inject constructor() :
             companyTv.text = data.company
             industryTv.text = data.industry
             descriptionTv.text = data.description
-            vacancyButton.setOnClickListener {
+            responseButton.setOnClickListener {
                 onVacancyClickListener?.let { click ->
                     click(data)
                 }
