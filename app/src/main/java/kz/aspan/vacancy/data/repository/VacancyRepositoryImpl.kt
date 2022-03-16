@@ -1,11 +1,10 @@
 package kz.aspan.vacancy.data.repository
 
 import kz.aspan.vacancy.data.remote.VacancyApi
-import kz.aspan.vacancy.domain.model.DataInfo
-import kz.aspan.vacancy.domain.model.Simple
-import kz.aspan.vacancy.domain.model.Token
-import kz.aspan.vacancy.domain.model.User
+import kz.aspan.vacancy.domain.model.*
 import kz.aspan.vacancy.domain.repository.VacancyRepository
+import okhttp3.MultipartBody
+import okhttp3.RequestBody
 import javax.inject.Inject
 
 class VacancyRepositoryImpl @Inject constructor(
@@ -37,5 +36,9 @@ class VacancyRepositoryImpl @Inject constructor(
 
     override suspend fun getEmployerById(id: String): DataInfo {
         return api.getEmployer(id)
+    }
+
+    override suspend fun generateCv(part: RequestBody): Resume {
+        return api.generateCV(part)
     }
 }

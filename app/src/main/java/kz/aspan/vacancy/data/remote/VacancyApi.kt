@@ -1,13 +1,9 @@
 package kz.aspan.vacancy.data.remote
 
-import kz.aspan.vacancy.domain.model.DataInfo
-import kz.aspan.vacancy.domain.model.Simple
-import kz.aspan.vacancy.domain.model.Token
-import kz.aspan.vacancy.domain.model.User
-import retrofit2.http.Body
-import retrofit2.http.GET
-import retrofit2.http.POST
-import retrofit2.http.Query
+import kz.aspan.vacancy.domain.model.*
+import okhttp3.MultipartBody
+import okhttp3.RequestBody
+import retrofit2.http.*
 
 interface VacancyApi {
 
@@ -38,6 +34,9 @@ interface VacancyApi {
     suspend fun getEmployer(
         @Query("EmployerId") id: String,
     ): DataInfo
+
+    @POST("resume")
+    suspend fun generateCV(@Body body: RequestBody): Resume
 
 
 }

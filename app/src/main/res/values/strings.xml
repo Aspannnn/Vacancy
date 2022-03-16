@@ -26,4 +26,10 @@
     <string name="generate_a_resume">Сформировать резюме</string>
     <string name="view_cv">Просмотреть</string>
     <string name="send">Отправить</string>
+    <string name="phone_number">Контактный номер</string>
+    <string name="avg_gpa">Средний GPA</string>
+    <string name="photo">Фото</string>
+    <string name="skill">Навыки</string>
+    <string name="achievements">Достижения</string>
+    <string name="experience">Опыт</string>
 </resources>

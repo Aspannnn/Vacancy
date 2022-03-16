@@ -25,7 +25,7 @@ import com.google.android.material.textview.MaterialTextView
 import dagger.hilt.android.AndroidEntryPoint
 import kz.aspan.vacancy.R
 import kz.aspan.vacancy.common.Constants.SKILL
-import kz.aspan.vacancy.common.navigateSafely
+import kz.aspan.vacancy.common.extensions.navigateSafely
 import kz.aspan.vacancy.common.px
 import kz.aspan.vacancy.databinding.FragmentSkillBinding
 import kz.aspan.vacancy.domain.model.Simple

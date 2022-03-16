@@ -1,9 +1,8 @@
 package kz.aspan.vacancy.domain.repository
 
-import kz.aspan.vacancy.domain.model.DataInfo
-import kz.aspan.vacancy.domain.model.Simple
-import kz.aspan.vacancy.domain.model.Token
-import kz.aspan.vacancy.domain.model.User
+import kz.aspan.vacancy.domain.model.*
+import okhttp3.MultipartBody
+import okhttp3.RequestBody
 
 interface VacancyRepository {
     suspend fun getToken(user: User): Token
@@ -15,4 +14,6 @@ interface VacancyRepository {
     suspend fun getProfessionById(id: String): DataInfo
     suspend fun getSkillById(id: String): DataInfo
     suspend fun getEmployerById(id: String): DataInfo
+
+    suspend fun generateCv(part: RequestBody): Resume
 }

@@ -28,14 +28,16 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <com.google.android.material.imageview.ShapeableImageView
-        android:id="@+id/userPhotoIv"
+        android:scaleType="fitXY"
+        android:id="@+id/avatarIv"
         android:layout_width="100dp"
+        android:layout_marginTop="5dp"
         android:layout_height="100dp"
         android:contentDescription="@string/user_avatar"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editTitle"
         app:shapeAppearanceOverlay="@style/ShapeAppearanceOverlay.App.CornerSize10Percent"
-        tools:src="@tools:sample/avatars"
+        android:src="@drawable/default_avatar"
         tools:text="aspansdu@gmail.com" />
 
 
@@ -45,7 +47,7 @@
         android:layout_height="31dp"
         android:layout_marginTop="12dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/userPhotoIv" />
+        app:layout_constraintTop_toBottomOf="@+id/avatarIv" />
 
     <com.google.android.material.textview.MaterialTextView
         android:id="@+id/materialTextView8"

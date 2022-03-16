@@ -28,7 +28,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <com.google.android.material.textview.MaterialTextView
-        android:id="@+id/userPhotoIv"
+        android:id="@+id/infoTv"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="5dp"
@@ -45,7 +45,7 @@
         android:layout_height="31dp"
         android:layout_marginTop="12dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/userPhotoIv" />
+        app:layout_constraintTop_toBottomOf="@+id/infoTv" />
 
     <com.google.android.material.textview.MaterialTextView
         android:id="@+id/materialTextView8"

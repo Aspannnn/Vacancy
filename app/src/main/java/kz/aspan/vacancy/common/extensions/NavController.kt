@@ -1,4 +1,4 @@
-package kz.aspan.vacancy.common
+package kz.aspan.vacancy.common.extensions
 
 import android.os.Bundle
 import androidx.annotation.IdRes

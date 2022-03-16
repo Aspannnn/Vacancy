@@ -11,7 +11,7 @@ import androidx.navigation.fragment.navArgs
 import com.google.android.material.chip.Chip
 import com.google.android.material.chip.ChipGroup
 import kz.aspan.vacancy.R
-import kz.aspan.vacancy.common.navigateSafely
+import kz.aspan.vacancy.common.extensions.navigateSafely
 import kz.aspan.vacancy.databinding.FragmentDetailInformationBinding
 import kz.aspan.vacancy.domain.model.Data
 import okhttp3.MediaType.Companion.toMediaType
@@ -38,10 +38,6 @@ class DetailInformationFragment : Fragment(R.layout.fragment_detail_information)
         binding.responseButton.setOnClickListener {
             findNavController().navigateSafely(R.id.action_detailInformationFragment_to_responseToAVacancyFragment)
         }
-
-        val file = File("asdasd")
-        file.asRequestBody("image/*".toMediaTypeOrNull())
-        "sdfsdf".toRequestBody("text/plain;charset=utf-8".toMediaType())
     }
 
 

@@ -4,7 +4,8 @@ import kz.aspan.vacancy.common.Constants.IGNORE_AUTH_URLS
 import okhttp3.Interceptor
 import okhttp3.Response
 
-class BasicAuthInterceptor : Interceptor {
+class
+BasicAuthInterceptor : Interceptor {
     var token: String? = null
 
     override fun intercept(chain: Interceptor.Chain): Response {
