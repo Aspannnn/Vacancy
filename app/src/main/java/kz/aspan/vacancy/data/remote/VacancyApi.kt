@@ -3,6 +3,7 @@ package kz.aspan.vacancy.data.remote
 import kz.aspan.vacancy.domain.model.*
 import okhttp3.MultipartBody
 import okhttp3.RequestBody
+import okhttp3.Response
 import retrofit2.http.*
 
 interface VacancyApi {
@@ -38,5 +39,9 @@ interface VacancyApi {
     @POST("resume")
     suspend fun generateCV(@Body body: RequestBody): Resume
 
+    @GET("resume/info")
+    suspend fun getStudent(): Student
 
+    @POST("resume/{id}/send")
+    suspend fun sendResume(@Path("id") id: String)
 }

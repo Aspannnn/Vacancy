@@ -66,5 +66,9 @@
         android:id="@+id/responseToAVacancyFragment"
         android:name="kz.aspan.vacancy.presentation.response.ResponseToAVacancyFragment"
         android:label="fragment_respons_to_a_vacancy"
-        tools:layout="@layout/fragment_respons_to_a_vacancy" />
+        tools:layout="@layout/fragment_respons_to_a_vacancy" >
+        <argument
+            android:name="id"
+            app:argType="string" />
+    </fragment>
 </navigation>

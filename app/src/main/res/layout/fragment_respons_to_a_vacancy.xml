@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/scrollView"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     tools:context=".presentation.response.ResponseToAVacancyFragment">
@@ -91,12 +93,15 @@
 
         <Button
             android:id="@+id/generateCVButton"
+            style="@style/outlineButton"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginStart="14dp"
             android:layout_marginTop="20dp"
             android:layout_marginEnd="14dp"
-            android:text="@string/generate_a_resume" />
+            android:text="@string/generate_a_resume"
+            android:textAllCaps="false"
+            android:textColor="@color/congress_lue" />
 
         <LinearLayout
             android:id="@+id/cvButtons"
@@ -115,9 +120,11 @@
                 android:layout_marginTop="20dp"
                 android:layout_marginEnd="10dp"
                 android:layout_weight="1"
-                android:paddingStart="14dp"
-                android:paddingEnd="14dp"
-                android:text="@string/view_cv" />
+                android:backgroundTint="@color/silver_tree"
+                android:maxLines="1"
+                android:text="@string/view_cv"
+                android:textAllCaps="false"
+                app:icon="@drawable/tray_arrow_down" />
 
             <Button
                 android:id="@+id/sendButton"
@@ -126,9 +133,10 @@
                 android:layout_marginStart="10dp"
                 android:layout_marginTop="20dp"
                 android:layout_weight="1"
-                android:paddingStart="14dp"
-                android:paddingEnd="14dp"
-                android:text="@string/send" />
+                android:backgroundTint="@color/congress_lue"
+                android:maxLines="1"
+                android:text="@string/send"
+                android:textAllCaps="false" />
         </LinearLayout>
     </LinearLayout>
 

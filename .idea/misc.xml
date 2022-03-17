@@ -36,8 +36,15 @@
         <entry key="..\:/Users/Aspan/AndroidProjects/Vacancy/app/src/main/res/layout/tool_bar.xml" value="0.2453125" />
         <entry key="..\:/Users/Aspan/AndroidProjects/Vacancy/app/src/main/res/layout/vacancy_list_item.xml" value="0.3875" />
         <entry key="..\:/Users/Aspan/AndroidProjects/Vacancy/app/src/main/res/layout/view_pager_item.xml" value="0.3875" />
+        <entry key="..\:/Users/s.tilek/Aspan/Android/Vacancy/app/src/main/res/drawable/arrow_back.xml" value="0.154" />
+        <entry key="..\:/Users/s.tilek/Aspan/Android/Vacancy/app/src/main/res/drawable/ic_next.xml" value="0.154" />
+        <entry key="..\:/Users/s.tilek/Aspan/Android/Vacancy/app/src/main/res/drawable/tray_arrow_down.xml" value="0.11" />
         <entry key="..\:/Users/s.tilek/Aspan/Android/Vacancy/app/src/main/res/layout/fragment_detail_information.xml" value="0.2015625" />
+        <entry key="..\:/Users/s.tilek/Aspan/Android/Vacancy/app/src/main/res/layout/fragment_respons_to_a_vacancy.xml" value="0.33" />
         <entry key="..\:/Users/s.tilek/Aspan/Android/Vacancy/app/src/main/res/layout/fragment_vacancies.xml" value="0.2015625" />
+        <entry key="..\:/Users/s.tilek/Aspan/Android/Vacancy/app/src/main/res/layout/item_resume_editor_et.xml" value="0.11865942028985507" />
+        <entry key="..\:/Users/s.tilek/Aspan/Android/Vacancy/app/src/main/res/layout/item_resume_editor_tv.xml" value="0.25" />
+        <entry key="..\:/Users/s.tilek/Aspan/Android/Vacancy/app/src/main/res/layout/item_vacancy_info.xml" value="0.18819655521783182" />
       </map>
     </option>
   </component>

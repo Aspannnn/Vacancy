@@ -36,7 +36,12 @@ class DetailInformationFragment : Fragment(R.layout.fragment_detail_information)
         displayInfo(vacancy)
 
         binding.responseButton.setOnClickListener {
-            findNavController().navigateSafely(R.id.action_detailInformationFragment_to_responseToAVacancyFragment)
+            findNavController().navigateSafely(
+                R.id.action_detailInformationFragment_to_responseToAVacancyFragment,
+                Bundle().apply {
+                    putString("id", vacancy.id)
+                }
+            )
         }
     }
 

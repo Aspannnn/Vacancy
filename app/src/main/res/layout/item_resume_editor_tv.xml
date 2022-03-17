@@ -38,14 +38,27 @@
         app:layout_constraintTop_toBottomOf="@+id/editTitle"
         tools:text="aspansdu@gmail.com" />
 
+    <com.google.android.material.textfield.TextInputEditText
+        android:id="@+id/textInputEditText"
+        android:layout_width="0dp"
+        android:imeOptions="actionDone"
+        android:inputType="text"
+        android:layout_height="wrap_content"
+        android:background="@drawable/edit_text_back"
+        android:padding="10dp"
+        android:textSize="14sp"
+        android:visibility="gone"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/infoTv" />
+
 
     <androidx.appcompat.widget.SwitchCompat
         android:id="@+id/editSB"
         android:layout_width="50dp"
         android:layout_height="31dp"
-        android:layout_marginTop="12dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/infoTv" />
+        app:layout_constraintTop_toBottomOf="@+id/textInputEditText" />
 
     <com.google.android.material.textview.MaterialTextView
         android:id="@+id/materialTextView8"

@@ -5,6 +5,7 @@ import kz.aspan.vacancy.domain.model.*
 import kz.aspan.vacancy.domain.repository.VacancyRepository
 import okhttp3.MultipartBody
 import okhttp3.RequestBody
+import okhttp3.Response
 import javax.inject.Inject
 
 class VacancyRepositoryImpl @Inject constructor(
@@ -40,5 +41,13 @@ class VacancyRepositoryImpl @Inject constructor(
 
     override suspend fun generateCv(part: RequestBody): Resume {
         return api.generateCV(part)
+    }
+
+    override suspend fun getStudent(): Student {
+        return api.getStudent()
+    }
+
+    override suspend fun sendResume(id: String) {
+        return api.sendResume(id)
     }
 }
