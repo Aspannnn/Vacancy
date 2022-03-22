@@ -70,5 +70,17 @@
         <argument
             android:name="id"
             app:argType="string" />
+        <action
+            android:id="@+id/action_responseToAVacancyFragment_to_PDFViewerFragment"
+            app:destination="@id/PDFViewerFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/PDFViewerFragment"
+        android:name="kz.aspan.vacancy.presentation.PDFViewerFragment"
+        android:label="fragment_p_d_f_viewer"
+        tools:layout="@layout/fragment_p_d_f_viewer" >
+        <argument
+            android:name="pdf_url"
+            app:argType="string" />
     </fragment>
 </navigation>

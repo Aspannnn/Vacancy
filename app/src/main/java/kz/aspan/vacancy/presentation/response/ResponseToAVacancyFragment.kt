@@ -18,12 +18,14 @@ import android.widget.Toast
 import androidx.core.content.ContextCompat.getSystemService
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
+import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
 import coil.load
 import dagger.hilt.android.AndroidEntryPoint
 import kz.aspan.vacancy.R
 import kz.aspan.vacancy.common.ImagePicker
 import kz.aspan.vacancy.common.extensions.hideKeyboard
+import kz.aspan.vacancy.common.extensions.navigateSafely
 import kz.aspan.vacancy.common.extensions.onDone
 import kz.aspan.vacancy.databinding.FragmentResponsToAVacancyBinding
 import kz.aspan.vacancy.databinding.ItemResumeEditorTvBinding
@@ -79,7 +81,6 @@ class ResponseToAVacancyFragment : Fragment(R.layout.fragment_respons_to_a_vacan
                 imagePicker.selectImage()
             }
         }
-
 
         //email
         binding.emailEditor.apply {
@@ -216,7 +217,14 @@ class ResponseToAVacancyFragment : Fragment(R.layout.fragment_respons_to_a_vacan
         }
 
         binding.viewCV.setOnClickListener {
-            downloadFile(resume.resumeUrl)
+//            downloadFile(resume.resumeUrl)
+
+            findNavController().navigateSafely(
+                R.id.action_responseToAVacancyFragment_to_PDFViewerFragment,
+                Bundle().apply {
+                    putString("pdf_url", resume.resumeUrl)
+                }
+            )
         }
 
         binding.sendButton.setOnClickListener {

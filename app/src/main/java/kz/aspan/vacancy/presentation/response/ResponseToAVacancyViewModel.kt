@@ -99,4 +99,5 @@ class ResponseToAVacancyViewModel @Inject constructor(
             body.addFormDataPart(param, data)
         }
     }
+
 }
