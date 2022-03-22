@@ -5,9 +5,8 @@
     android:layout_height="match_parent"
     tools:context=".presentation.PDFViewerFragment">
 
-    <WebView
-        android:id="@+id/pdfwv"
+    <ImageView
+        android:id="@+id/pdfTest"
         android:layout_width="match_parent"
         android:layout_height="match_parent" />
-
 </LinearLayout>

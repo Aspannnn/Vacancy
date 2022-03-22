@@ -1,33 +1,43 @@
 package kz.aspan.vacancy.presentation
 
-import android.annotation.SuppressLint
+import android.graphics.Bitmap
+import android.graphics.pdf.PdfRenderer
 import android.os.Bundle
+import android.os.ParcelFileDescriptor
 import androidx.fragment.app.Fragment
 import android.view.View
-import android.webkit.WebChromeClient
-import android.webkit.WebViewClient
-import androidx.navigation.fragment.navArgs
+import androidx.fragment.app.viewModels
+import dagger.hilt.android.AndroidEntryPoint
 import kz.aspan.vacancy.R
 import kz.aspan.vacancy.databinding.FragmentPDFViewerBinding
+import java.io.File
 
+
+@AndroidEntryPoint
 class PDFViewerFragment : Fragment(R.layout.fragment_p_d_f_viewer) {
     private var _binding: FragmentPDFViewerBinding? = null
     private val binding: FragmentPDFViewerBinding
         get() = _binding!!
 
-    private val args: PDFViewerFragmentArgs by navArgs()
+    private val viewModel: PDFViewerViewModel by viewModels()
 
-    @SuppressLint("SetJavaScriptEnabled")
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         _binding = FragmentPDFViewerBinding.bind(view)
 
-        binding.pdfwv.apply {
-            webChromeClient = WebChromeClient()
-            webViewClient = WebViewClient()
-            settings.javaScriptEnabled = true
-            settings.setSupportZoom(true)
-            loadUrl("https://docs.google.com/gview?embedded=true&url=${args.pdfUrl}")
+        viewModel.resumeFilePathMutableLiveData.observe(viewLifecycleOwner) {
+            val input = ParcelFileDescriptor.open(File(it), ParcelFileDescriptor.MODE_READ_ONLY)
+            val renderer = PdfRenderer(input)
+            val page = renderer.openPage(0)
+
+            val bitmap = Bitmap.createBitmap(400, 400, Bitmap.Config.ARGB_8888)
+            page.render(bitmap, null, null, PdfRenderer.Page.RENDER_MODE_FOR_DISPLAY)
+
+            binding.pdfTest.setImageBitmap(bitmap)
+
+            page.close()
+            renderer.close()
+
         }
     }
 

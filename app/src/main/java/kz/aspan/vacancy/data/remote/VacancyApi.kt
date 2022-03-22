@@ -1,12 +1,17 @@
 package kz.aspan.vacancy.data.remote
 
 import kz.aspan.vacancy.domain.model.*
-import okhttp3.MultipartBody
 import okhttp3.RequestBody
 import okhttp3.Response
+import okhttp3.ResponseBody
 import retrofit2.http.*
+import java.io.InputStream
 
 interface VacancyApi {
+
+    @Streaming
+    @GET
+    suspend fun downloadPdf(@Url url: String): ResponseBody
 
     @POST("Authentication/Login")
     suspend fun login(@Body user: User): Token

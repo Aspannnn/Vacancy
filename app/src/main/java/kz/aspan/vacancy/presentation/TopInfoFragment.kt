@@ -26,7 +26,7 @@ import kz.aspan.vacancy.common.Constants.PROFESSION
 import kz.aspan.vacancy.common.Constants.SKILL
 import kz.aspan.vacancy.common.MarginItemDecoration
 import kz.aspan.vacancy.common.extensions.navigateSafely
-import kz.aspan.vacancy.common.px
+import kz.aspan.vacancy.common.extensions.px
 import kz.aspan.vacancy.databinding.FragmentTopInfoBinding
 import kz.aspan.vacancy.domain.model.SimpleData
 import javax.inject.Inject

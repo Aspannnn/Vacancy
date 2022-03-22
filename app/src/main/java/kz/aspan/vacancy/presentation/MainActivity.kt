@@ -2,11 +2,9 @@ package kz.aspan.vacancy.presentation
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.os.Environment
 import dagger.hilt.android.AndroidEntryPoint
 import kz.aspan.vacancy.data.remote.BasicAuthInterceptor
 import kz.aspan.vacancy.databinding.ActivityMainBinding
-import java.io.File
 import javax.inject.Inject
 
 @AndroidEntryPoint

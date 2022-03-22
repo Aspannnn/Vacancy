@@ -1,10 +1,9 @@
-package kz.aspan.vacancy.common
+package kz.aspan.vacancy.common.extensions
 
 import android.content.res.Resources
-import android.view.ViewGroup
-import androidx.annotation.Px
 import com.github.mikephil.charting.charts.Chart
 import com.github.mikephil.charting.charts.PieChart
+import kz.aspan.vacancy.common.CustomLegendRender
 
 fun PieChart.setCustomLegendRenderer() {
     val field = Chart::class.java.getDeclaredField("mLegendRenderer").apply { isAccessible = true }

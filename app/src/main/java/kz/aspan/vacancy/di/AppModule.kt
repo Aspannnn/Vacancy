@@ -1,8 +1,10 @@
 package kz.aspan.vacancy.di
 
+import android.content.Context
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
+import dagger.hilt.android.qualifiers.ApplicationContext
 import dagger.hilt.components.SingletonComponent
 import kz.aspan.vacancy.common.Constants.BASE_URL
 import kz.aspan.vacancy.data.remote.BasicAuthInterceptor
@@ -50,7 +52,14 @@ object AppModule {
 
     @Singleton
     @Provides
-    fun provideVacancyRepository(api: VacancyApi): VacancyRepository {
-        return VacancyRepositoryImpl(api)
+    fun provideApplicationContext(@ApplicationContext context: Context) = context
+
+    @Singleton
+    @Provides
+    fun provideVacancyRepository(
+        @ApplicationContext context: Context,
+        api: VacancyApi
+    ): VacancyRepository {
+        return VacancyRepositoryImpl(context, api)
     }
 }
