@@ -1,28 +1,23 @@
 package kz.aspan.vacancy.presentation.response
 
-import android.app.DownloadManager
-import android.content.BroadcastReceiver
-import android.content.Context
-import android.content.Intent
-import android.content.IntentFilter
 import android.graphics.Bitmap
 import android.graphics.ImageDecoder
 import android.net.Uri
 import android.os.Build
 import android.os.Bundle
-import android.os.Environment
 import android.provider.MediaStore
 import android.view.View
 import android.widget.ScrollView
 import android.widget.Toast
-import androidx.core.content.ContextCompat.getSystemService
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
 import coil.load
 import dagger.hilt.android.AndroidEntryPoint
+import kotlinx.coroutines.delay
 import kz.aspan.vacancy.R
+import kz.aspan.vacancy.common.Constants
 import kz.aspan.vacancy.common.ImagePicker
 import kz.aspan.vacancy.common.extensions.hideKeyboard
 import kz.aspan.vacancy.common.extensions.navigateSafely
@@ -31,7 +26,6 @@ import kz.aspan.vacancy.databinding.FragmentResponsToAVacancyBinding
 import kz.aspan.vacancy.databinding.ItemResumeEditorTvBinding
 import kz.aspan.vacancy.domain.model.Resume
 import kz.aspan.vacancy.domain.model.ResumeData
-import java.io.File
 
 @AndroidEntryPoint
 class ResponseToAVacancyFragment : Fragment(R.layout.fragment_respons_to_a_vacancy) {
@@ -40,7 +34,6 @@ class ResponseToAVacancyFragment : Fragment(R.layout.fragment_respons_to_a_vacan
         get() = _binding!!
 
     private lateinit var imagePicker: ImagePicker
-    private var downloadId: Long = 0
 
     private val viewModel: ResponseToAVacancyViewModel by viewModels()
     private val args: ResponseToAVacancyFragmentArgs by navArgs()
@@ -52,10 +45,6 @@ class ResponseToAVacancyFragment : Fragment(R.layout.fragment_respons_to_a_vacan
         super.onViewCreated(view, savedInstanceState)
         _binding = FragmentResponsToAVacancyBinding.bind(view)
 
-        requireActivity().registerReceiver(
-            br,
-            IntentFilter(DownloadManager.ACTION_DOWNLOAD_COMPLETE)
-        )
         subscribeToObservers()
 
         var bitmap: Bitmap? = null
@@ -217,8 +206,6 @@ class ResponseToAVacancyFragment : Fragment(R.layout.fragment_respons_to_a_vacan
         }
 
         binding.viewCV.setOnClickListener {
-//            downloadFile(resume.resumeUrl)
-
             findNavController().navigateSafely(
                 R.id.action_responseToAVacancyFragment_to_PDFViewerFragment,
                 Bundle().apply {
@@ -231,37 +218,6 @@ class ResponseToAVacancyFragment : Fragment(R.layout.fragment_respons_to_a_vacan
             viewModel.sendResume(resume.id)
         }
     }
-
-    private val br = object : BroadcastReceiver() {
-        override fun onReceive(p0: Context?, p1: Intent?) {
-            val id = p1?.getLongExtra(DownloadManager.EXTRA_DOWNLOAD_ID, -1)
-            if (id == downloadId) {
-                Toast.makeText(
-                    requireActivity().applicationContext,
-                    "Download Completed",
-                    Toast.LENGTH_LONG
-                ).show()
-            }
-        }
-    }
-
-    private fun downloadFile(url: String) {
-        val request = DownloadManager.Request(Uri.parse(url))
-            .setTitle("Document")
-            .setDescription("Downloading")
-            .setNotificationVisibility(DownloadManager.Request.VISIBILITY_VISIBLE_NOTIFY_COMPLETED)
-            .setAllowedOverMetered(true)
-            .setAllowedNetworkTypes(
-                DownloadManager.Request.NETWORK_WIFI or
-                        DownloadManager.Request.NETWORK_MOBILE
-            )
-            .setDestinationInExternalPublicDir(Environment.DIRECTORY_DOWNLOADS, "Document")
-            .setMimeType("application/pdf")
-
-        val dm = requireActivity().getSystemService(Context.DOWNLOAD_SERVICE) as DownloadManager
-        downloadId = dm.enqueue(request)
-    }
-
 
     private fun edit(test: ItemResumeEditorTvBinding) {
         val editText = test.textInputEditText.text.toString()
@@ -296,10 +252,15 @@ class ResponseToAVacancyFragment : Fragment(R.layout.fragment_respons_to_a_vacan
                     "Ваше резюме отправлено работодателю",
                     Toast.LENGTH_LONG
                 ).show()
+
+                findNavController().apply {
+                    popBackStack(R.id.detailInformationFragment, true)
+                }
             }
+
+
         }
     }
-
 
     private fun createBitmapFromUri(uri: Uri): Bitmap? {
         val contentResolver = requireActivity().contentResolver

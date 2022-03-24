@@ -48,7 +48,9 @@
             app:destination="@id/detailInformationFragment" />
         <action
             android:id="@+id/action_vacanciesFragment_to_detailInformationFragment2"
-            app:destination="@id/detailInformationFragment" />
+            app:destination="@id/detailInformationFragment"
+            app:launchSingleTop="false"
+            app:popUpToInclusive="false" />
     </fragment>
     <fragment
         android:id="@+id/detailInformationFragment"

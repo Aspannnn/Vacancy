@@ -25,19 +25,22 @@ class PDFViewerFragment : Fragment(R.layout.fragment_p_d_f_viewer) {
         super.onViewCreated(view, savedInstanceState)
         _binding = FragmentPDFViewerBinding.bind(view)
 
+        val screenWidth = resources.displayMetrics.widthPixels
+
         viewModel.resumeFilePathMutableLiveData.observe(viewLifecycleOwner) {
             val input = ParcelFileDescriptor.open(File(it), ParcelFileDescriptor.MODE_READ_ONLY)
             val renderer = PdfRenderer(input)
             val page = renderer.openPage(0)
 
-            val bitmap = Bitmap.createBitmap(400, 400, Bitmap.Config.ARGB_8888)
+            val bitmap = Bitmap.createBitmap(
+                screenWidth,
+                (screenWidth.toFloat() / page.width * page.height).toInt(),
+                Bitmap.Config.ARGB_8888
+            )
             page.render(bitmap, null, null, PdfRenderer.Page.RENDER_MODE_FOR_DISPLAY)
-
             binding.pdfTest.setImageBitmap(bitmap)
-
             page.close()
             renderer.close()
-
         }
     }
 
@@ -45,5 +48,4 @@ class PDFViewerFragment : Fragment(R.layout.fragment_p_d_f_viewer) {
         super.onDestroy()
         _binding = null
     }
-
 }

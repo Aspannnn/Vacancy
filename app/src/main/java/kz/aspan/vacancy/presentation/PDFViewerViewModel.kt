@@ -29,7 +29,7 @@ class PDFViewerViewModel @Inject constructor(
                 val result = repository.downloadPDF(url,"student")
                 resumeFilePathMutableLiveData.postValue(result)
             } catch (e: Exception) {
-                e.printStackTrace()
+               e.printStackTrace()
             }
         }
     }

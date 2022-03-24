@@ -38,12 +38,10 @@ class ResponseToAVacancyViewModel @Inject constructor(
     }
 
     fun sendResume(id: String) {
-        println("TEST SEND  $id")
         viewModelScope.launch {
             try {
                 repository.sendResume(id)
                 _isResumeSent.postValue(true)
-//                }
             } catch (e: Exception) {
                 _isResumeSent.postValue(false)
             }
